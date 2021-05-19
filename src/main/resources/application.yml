@@ -1,0 +1,18 @@
+spring:
+  thymeleaf:
+    cache: false
+
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://111.229.220.169:3306/privacy?useSSL=TRUE&useUnicode=TRUE&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  #  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+
+

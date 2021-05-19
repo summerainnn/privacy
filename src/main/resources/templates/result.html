@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+</head>
+<body>
+    <button type="button">
+        <a th:href=@{/} th:text="返回" style="color: black"></a>
+    </button>
+    <div>
+        <table>
+            <tr th:each="item,result:${map}">
+                <td th:text="${result.index}+1"></td>
+                <td th:text="${result.current.key}"></td><!-- key-->
+                <td th:text="${result.current.value}"></td><!-- value-->
+            </tr>
+        </table>
+
+       </div>
+</body>
+</html>

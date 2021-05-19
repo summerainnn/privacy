@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <button type="button">
+        <a th:href=@{/logout} th:text="退出" style="color: black"></a>
+    </button>
+    <h1>用户管理</h1>
+    <div>
+        <tr th:each="user:${userList}">
+            <!--                <a th:href=@{'/read/'+${weibo.weiboId}} th:text="${weibo.content}">content-->
+            <td th:text="${user.name}">
+            </td>
+            <button type="button">
+                <a th:href=@{/delete/{id}(id=${user.id})} th:text="删除" style="color: black"></a>
+            </button>
+            <br>
+        </tr>
+    </div>
+</body>
+</html>
