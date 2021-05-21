@@ -10,16 +10,15 @@
 
   <title>用户隐私协议分析</title>
 
-  <!-- Bootstrap core CSS -->
-  <link th:href="@{/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
-
-  <!-- Custom fonts for this template -->
-  <link th:href="@{/vendor/fontawesome-free/css/all.min.css}" rel="stylesheet">
-  <link th:href="@{/vendor/simple-line-icons/css/simple-line-icons.css}" rel="stylesheet" type="text/css">
-  <link th:href="@{/https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic}" rel="stylesheet" type="text/css">
-
-  <!-- Custom 2styles for this template -->
-  <link th:href="@{/css/landing-page.min.css}" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <!-- Font Awesome icons (free version)-->
+  <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+  <!-- Simple line icons-->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+  <!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles.css" rel="stylesheet" />
 
 </head>
 
@@ -28,7 +27,7 @@
   <!-- Navigation -->
   <nav class="navbar bg-light static-top">
     <div class="container"  th:if="${#strings.isEmpty(isLogin)}">
-      <a class="navbar-brand" th:href="@{#}">Privacy Agreement Analysis</p>
+      <a class="navbar-brand" th:href="@{/}">Privacy Agreement Analysis</p>
       <a class="btn btn-primary" th:href="@{/login.html}">Sign In</a>
     </div>
       <div class="container" th:if="${not #strings.isEmpty(isLogin)}">
@@ -43,7 +42,7 @@
     <div class="container">
       <div class="row">
         <div class="col-xl-9 mx-auto">
-          <h1 class="mb-5">DEMO</h1>
+          <h1 class="mb-5">Privacy Agreement Analysis          </h1>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
 		  <form th:action="@{/text}" method="post" id='usrform' >
@@ -59,8 +58,40 @@
     </div>
   </header>
 
-  <script th:src="@{/vendor/jquery/jquery.min.js}"></script>
-  <script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+  <!-- Icons Grid-->
+  <section class="features-icons bg-light text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                    <div class="features-icons-icon d-flex"><i class="icon-screen-desktop m-auto text-primary"></i></div>
+                    <h3>AI Analyzer</h3>
+                    <p class="lead mb-0">The privacy agreement is analyzed on our server by our wonderful AI!</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                    <div class="features-icons-icon d-flex"><i class="icon-layers m-auto text-primary"></i></div>
+                    <h3>Stored</h3>
+                    <p class="lead mb-0">Analyses are stored! Find your interested analysis here.</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                    <div class="features-icons-icon d-flex"><i class="icon-check m-auto text-primary"></i></div>
+                    <h3>Easy to Use</h3>
+                    <p class="lead mb-0">Login in now, or sign up for free!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+  <!-- Bootstrap core JS-->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="js/scripts.js"></script>
 
 </body>
 

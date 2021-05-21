@@ -20,7 +20,11 @@ public class CollectionService {
 
     public void insert(Integer userId, String privacy, Integer resultId) {
         Collection collection = new Collection();
-        collection.setPrivacy(privacy);
+        if(privacy.length()>10){
+            collection.setPrivacy(privacy.substring(0,10)+"......");
+        }else {
+            collection.setPrivacy(privacy);
+        }
         collection.setResultId(resultId);
         collection.setUserId(userId);
         collectionMapper.insert(collection);

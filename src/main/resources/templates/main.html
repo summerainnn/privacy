@@ -3,30 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <title>主页</title>
+
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
 </head>
 <body>
-    <button type="button">
+    <button type="button" class="btn btn-primary">
         <a th:href=@{/logout} th:text="退出" style="color: black"></a>
     </button>
-    <button type="button">
+    <button type="button" class="btn btn-primary">
         <a th:href=@{/} th:text="返回" style="color: black"></a>
     </button>
+	
     <h1>
         <p th:text = "${name}" th:if="${not #strings.isEmpty(name)}"></p>
     </h1>
-    <div>
-        <p>-----------------------------------------</p>
-    </div>
+	<hr />
     <p th:text="历史记录"></p>
-    <div>
-        <table>
-            <tr th:each="collection:${collections}">
-                <td >
-                    <a th:href=@{/result/{id}(id=${collection.resultId})} th:text="${collection.privacy}"></a>
-                </td>
-            </tr>
-        </table>
+	<!-- <p th:text="历史记录">历史记录</p> -->
 
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Collections</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>result</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+						<tr th:each="collection:${collections}">
+							<td >
+								<a th:href=@{/result/{id}(id=${collection.resultId})} th:text="${collection.privacy}"></a>
+							</td>
+						</tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
 </body>
 </html>
